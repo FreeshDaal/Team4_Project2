@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCam : MonoBehaviour
+public class PlayerCam : MonoBehaviour //allows the player to control the camera with their mouse 
 {
     public float sensX;
     public float sensY;

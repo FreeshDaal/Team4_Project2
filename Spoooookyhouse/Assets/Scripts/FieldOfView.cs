@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using OpenCover.Framework.Model;
 
 [RequireComponent(typeof(PatrollingScript))]
-public class FieldOfView : MonoBehaviour
+public class FieldOfView : MonoBehaviour //this script is what makes the ghosts vision cone
 {
-
+    
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
 
-    public LayerMask targetMask;
-    public LayerMask obstacleMask;
+    public LayerMask targetMask; //layermask that the player has, so if seen it can run other code
+    public LayerMask obstacleMask; //layer that blocks vision
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public List<Transform> visibleTargets = new List<Transform>(); //if multipler players for some reason, it makes a list of all
 
     public float meshResolution;
     public int edgeResolveIterations;
@@ -40,10 +40,11 @@ public class FieldOfView : MonoBehaviour
         
        
         
-    }
+    } //the mesh allows me to add a material to it to be seen in game
+     
 
 
-    IEnumerator FindTargetsWithDelay(float delay)
+    IEnumerator FindTargetsWithDelay(float delay) //every so often this code runs to check if the player is in vision
     {
         while (true)
         {
@@ -57,7 +58,7 @@ public class FieldOfView : MonoBehaviour
         DrawFieldOfView();
     }
 
-    void FindVisibleTargets()
+    void FindVisibleTargets() //this checks if the player is in the vision cone if so i sends the patrollingscript after the player
     {
         visibleTargets.Clear();
         
@@ -87,7 +88,7 @@ public class FieldOfView : MonoBehaviour
         
     }
 
-    void DrawFieldOfView()
+    void DrawFieldOfView() //this draws the field of view a ton of math things my head hurts
     {
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;
@@ -101,7 +102,7 @@ public class FieldOfView : MonoBehaviour
             if (i > 0)
             {
                 bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
-                if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded))
+                if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded)) 
                 {
                     EdgeInfo edge = FindEdge(oldViewCast, newViewCast);
                     if (edge.pointA != Vector3.zero)
@@ -128,7 +129,7 @@ public class FieldOfView : MonoBehaviour
         vertices[0] = Vector3.zero;
         for (int i = 0; i < vertexCount - 1; i++)
         {
-            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
+            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]); //this makes triangles from each point in the vision cone
 
             if (i < vertexCount - 2)
             {
@@ -146,7 +147,7 @@ public class FieldOfView : MonoBehaviour
     }
 
 
-    EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)
+    EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)//this code essentally makes the vision cone smoother when the vision gets cut off
     {
         float minAngle = minViewCast.angle;
         float maxAngle = maxViewCast.angle;
@@ -175,7 +176,7 @@ public class FieldOfView : MonoBehaviour
     }
 
 
-    ViewCastInfo ViewCast(float globalAngle)
+    ViewCastInfo ViewCast(float globalAngle) //this just makes the angle and radius that the vision cone can see
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
         RaycastHit hit;

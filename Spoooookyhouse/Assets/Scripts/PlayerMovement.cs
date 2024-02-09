@@ -9,7 +9,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float walkSpeed;
-    public float sprintSpeed;
+    public float sprintSpeed;//this might not be used if no sprinting in our game
     public float groundDrag;
 
     public float jumpForce;

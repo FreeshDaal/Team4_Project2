@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PatrollingScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] points;
+    private GameObject[] points; //these are the waypoints, made into an array so I can make as many as i want
 
     [SerializeField]
     private NavMeshAgent agent;
@@ -26,7 +26,7 @@ public class PatrollingScript : MonoBehaviour
         
     }
 
-    private void Update()
+    private void Update() //when this script updates it checks if its near the waypoint if it is it runs the iterate function, it also checks if the navagent as stopped moving if so it goes back to its last waypoint
     {
 
         if (Vector3.Distance(this.transform.position, points[currPoint].transform.position) <= 2f)
@@ -40,7 +40,7 @@ public class PatrollingScript : MonoBehaviour
 
 
     }
-    public void Iterate()
+    public void Iterate() //this is called when the ghost is near the way point and makes the next waypoint its new destinations
     {
         if (currPoint < points.Length - 1)
         {
@@ -53,7 +53,7 @@ public class PatrollingScript : MonoBehaviour
         agent.destination = points[currPoint].transform.position;
     }
 
-    public void SeePlayer()
+    public void SeePlayer() //if the ghost is in the FOV of the ghost its changes its way point to the player
     {
         if (Vector3.Distance(this.transform.position, player.transform.position) <= 10f)
         {
