@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEditor.PackageManager;
 
-public class PlayerMovementTutorial : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
@@ -26,6 +26,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -46,6 +47,8 @@ public class PlayerMovementTutorial : MonoBehaviour
     public MeshRenderer viewcone;
     public MeshRenderer viewcone1;
 
+    public bool isSprinting;
+
 
     private void Start()
     {
@@ -53,7 +56,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
-        
+        isSprinting = false;
         startYScale = transform.localScale.y;
         
     }
@@ -65,23 +68,14 @@ public class PlayerMovementTutorial : MonoBehaviour
         Debug.DrawRay(transform.position, Vector3.down * (playerHeight * 0.5f + 0.2f), Color.red);
         if (grounded)
         {
-            
-        }
-        else
-        {
-            
-        }
-        MyInput();
-        SpeedControl();
-
-        // handle drag
-        if (grounded)
-        {
-            
             rb.drag = groundDrag;
         }
         else
+        {
             rb.drag = 0;
+        }
+        MyInput();
+        SpeedControl();
     }
 
     private void FixedUpdate()
@@ -118,6 +112,16 @@ public class PlayerMovementTutorial : MonoBehaviour
             moveSpeed = 3;
             viewcone.enabled = false;
             viewcone1.enabled = false;
+        }
+        if (grounded && Input.GetKeyDown(sprintKey))
+        {
+            isSprinting = true;
+            moveSpeed = sprintSpeed;
+        }
+        if (grounded && Input.GetKeyUp(sprintKey))
+        {
+            isSprinting = false;
+            moveSpeed = walkSpeed;
         }
     }
 

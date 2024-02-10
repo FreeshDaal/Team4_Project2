@@ -6,6 +6,7 @@ public class KeyScript : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
+    public GameObject Fog;
 
 
     void OnTriggerEnter(Collider other)
@@ -14,6 +15,7 @@ public class KeyScript : MonoBehaviour
         {
             gameEnding.isHoldingKey = true;
             this.gameObject.SetActive(false);
+            Fog.SetActive(true);
         }
     }
     void Start()

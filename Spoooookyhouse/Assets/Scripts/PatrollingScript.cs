@@ -12,6 +12,7 @@ public class PatrollingScript : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private GameObject player;
+    public PlayerMovement playerMovement;
 
     private int currPoint;
     
@@ -36,6 +37,10 @@ public class PatrollingScript : MonoBehaviour
         if (agent.velocity.magnitude < 0.15f)
         {
             agent.destination = points[currPoint].transform.position;
+        }
+        if (playerMovement.isSprinting)
+        {
+            agent.destination = player.transform.position;
         }
 
 

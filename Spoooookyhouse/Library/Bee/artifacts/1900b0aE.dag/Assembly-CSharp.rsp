@@ -358,6 +358,7 @@
 -analyzer:"D:/Unity/2022.3.18f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/DeathScript.cs"
 "Assets/Scripts/FieldOfView.cs"
+"Assets/Scripts/FogCloud.cs"
 "Assets/Scripts/GameEnding.cs"
 "Assets/Scripts/KeyScript.cs"
 "Assets/Scripts/MoveCamera.cs"
