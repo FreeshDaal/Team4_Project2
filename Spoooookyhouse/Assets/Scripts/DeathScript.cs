@@ -8,7 +8,7 @@ public class DeathScript : MonoBehaviour
     public GameEnding gameEnding;
     bool isPlayerInRange;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) //Checks if player is within collider
     {
         if (other.transform == player)
         {
@@ -24,7 +24,7 @@ public class DeathScript : MonoBehaviour
     }
     void Update()
     {
-        if (isPlayerInRange)
+        if (isPlayerInRange) 
         {
             Vector3 direction = player.position - transform.position + Vector3.up;
             Ray ray = new Ray(transform.position, direction);

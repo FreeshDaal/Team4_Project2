@@ -9,7 +9,7 @@ public class KeyScript : MonoBehaviour
     public GameObject Fog;
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) //just enables the bool of having a key and turns of gameobject
     {
         if (other.transform == player)
         {

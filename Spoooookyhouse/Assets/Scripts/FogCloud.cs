@@ -19,7 +19,7 @@ public class FogCloud : MonoBehaviour
     void Update()
     {
 
-        Fog.transform.position = Vector3.MoveTowards(Fog.transform.position, Ground.transform.position, speed);
+        Fog.transform.position = Vector3.MoveTowards(Fog.transform.position, Ground.transform.position, speed); //Moves fog cloud to ground on spawn
     }
 
 }
