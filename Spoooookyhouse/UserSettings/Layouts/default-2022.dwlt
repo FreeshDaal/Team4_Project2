@@ -99,7 +99,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 128
+=======
+  controlID: 44
+>>>>>>> Stashed changes
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -421,9 +425,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 12}
+<<<<<<< Updated upstream
     m_SelectedIDs: 245d0000
     m_LastClickedID: 23844
     m_ExpandedIDs: 00000000185d000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 3e5b0000
+    m_LastClickedID: 23358
+    m_ExpandedIDs: 000000002e5b000000ca9a3bffffff7f
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -451,7 +461,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000185d0000
+=======
+    m_ExpandedIDs: 000000002e5b0000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -478,7 +492,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ce610000d0610000e2610000cc610000e66100003a640000286400003664000038640000dc6300002e640000c0630000ce6300000068000078630000566c0000ba6c0000229900000a9500007cb2000004c5000000c500000cc50000beea0000186600007c640000706400002e700000a88d00007865000070bf00009c66000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -591,9 +605,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: 42a1ffff
       m_LastClickedID: -24254
       m_ExpandedIDs: e4f2fffff2f5ffff34f8ffff
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2efbfffff45a0000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1053,7 +1073,11 @@ MonoBehaviour:
   m_Size:
     m_Target: 8.695954
     speed: 2
+<<<<<<< Updated upstream
     m_Value: 8.321487
+=======
+    m_Value: 161.11955
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 0
     speed: 2
