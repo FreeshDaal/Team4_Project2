@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using OpenCover.Framework.Model;
+//using OpenCover.Framework.Model;
 
 [RequireComponent(typeof(PatrollingScript))]
 public class FieldOfView : MonoBehaviour //this script is what makes the ghosts vision cone
