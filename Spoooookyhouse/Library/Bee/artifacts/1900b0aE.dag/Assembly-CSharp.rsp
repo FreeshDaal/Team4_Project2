@@ -365,6 +365,7 @@
 "Assets/Scripts/PatrollingScript.cs"
 "Assets/Scripts/PlayerCam.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/Scrollingtxture.cs"
 -langversion:9.0
 
 /deterministic

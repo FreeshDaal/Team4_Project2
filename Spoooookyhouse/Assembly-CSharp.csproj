@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerCam.cs" />
+    <Compile Include="Assets\Scripts\Scrollingtxture.cs" />
     <Compile Include="Assets\Scripts\GameEnding.cs" />
     <Compile Include="Assets\Scripts\KeyScript.cs" />
     <Compile Include="Assets\Scripts\FogCloud.cs" />
