@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             
-            Body.transform.localScale = new Vector3(1, .5f, 1);
+            Body.transform.localScale = new Vector3(1, .2f, 1);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
             moveSpeed = 1;
             viewcone.enabled = true;
