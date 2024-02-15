@@ -36,6 +36,7 @@ public class GameEnding : MonoBehaviour
         if (isPlayerAtExit && isHoldingKey)
         {
             Debug.Log("You escaped!");
+            //add end screen!
         }
         else if (isPlayerCaught)
         {

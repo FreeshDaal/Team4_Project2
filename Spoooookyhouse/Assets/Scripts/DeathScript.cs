@@ -26,6 +26,7 @@ public class DeathScript : MonoBehaviour
     {
         if (isPlayerInRange) 
         {
+            gameEnding.CaughtPlayer();
             Vector3 direction = player.position - transform.position + Vector3.up;
             Ray ray = new Ray(transform.position, direction);
             RaycastHit raycastHit;
